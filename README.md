@@ -1,2 +1,2 @@
 # meeting_jam
-Meeting Jam Game repo
+Meeting Jam Game Repository
