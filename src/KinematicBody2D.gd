@@ -25,7 +25,7 @@ func get_input():
 	if Input.is_action_pressed('right'):
 		velocity.x = speed
 	if Input.is_action_pressed('left'):
-	    velocity.x = -speed
+		velocity.x = -speed
 	if Input.is_action_just_pressed('jump'):
 		if is_on_floor():
 			velocity.y = jump_power

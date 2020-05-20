@@ -7,5 +7,5 @@ float center_dist(vec2 coord)
 
 void fragment()
 {
-	COLOR = vec4(0.0, 0.0, 0.0, 5.0 * center_dist(vec2(UV.x-0.5, UV.y-0.5)));
+	COLOR = vec4(0.0, 0.0, 0.0, 12.0 * center_dist(vec2(UV.x-0.5, UV.y-0.5)));
 }
