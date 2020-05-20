@@ -4,6 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://gradient_circle.shader" type="Shader" id=3]
 [ext_resource path="res://background.png" type="Texture" id=4]
+[ext_resource path="res://light.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.1661, 31.2844 )
@@ -11,15 +12,10 @@ extents = Vector2( 31.1661, 31.2844 )
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 148.608
-
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
-[node name="sprite" type="Sprite" parent="."]
-
-[node name="icon" type="Sprite" parent="sprite"]
+[node name="icon" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -27,14 +23,19 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Light" type="Area2D" parent="."]
+[node name="Light" type="Light2D" parent="."]
+scale = Vector2( 1, 0.6 )
+texture = ExtResource( 5 )
+energy = 0.4
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_gradient_length = 1.3
+shadow_filter = 5
+shadow_filter_smooth = 11.1
 
 [node name="gradint_circle_shader" type="Sprite" parent="Light"]
+visible = false
 material = SubResource( 2 )
 position = Vector2( 1.50732, 0.630249 )
 scale = Vector2( 9.16083, 9.16083 )
 texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
-position = Vector2( 1.19209e-07, 0 )
-shape = SubResource( 3 )
