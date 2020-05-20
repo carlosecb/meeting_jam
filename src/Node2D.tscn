@@ -29,11 +29,14 @@ texture = ExtResource( 2 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 515.669, 414.122 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 514.083, 460.135 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource( 2 )
