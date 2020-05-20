@@ -6,6 +6,7 @@ extends KinematicBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("Read.")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,5 +51,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0,-1))
 
 
-func _on_Visibility_area_entered(area):
-	pass # Replace with function body.
+func _on_LightRange_body_entered(body):
+	if "Enemy" in body.name:
+		print(body.name + " found.")
+		body.see(self)

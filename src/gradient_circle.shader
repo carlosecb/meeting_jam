@@ -1,6 +1,7 @@
 shader_type canvas_item;
 
-float radium(float freq){
+float radium(float freq)
+{
 	float noise = sin(5.0*freq)*cos(3.0*freq);
 	return 5.125 + 0.125*noise;
 }
