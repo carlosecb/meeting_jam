@@ -30,6 +30,7 @@ texture = ExtResource( 2 )
 position = Vector2( 515.669, 414.122 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
+current = true
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 514.083, 460.135 )
