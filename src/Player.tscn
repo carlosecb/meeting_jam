@@ -24,7 +24,6 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Light" type="Light2D" parent="."]
-scale = Vector2( 1, 0.6 )
 texture = ExtResource( 5 )
 energy = 0.4
 shadow_enabled = true
@@ -34,8 +33,6 @@ shadow_filter = 5
 shadow_filter_smooth = 11.1
 
 [node name="gradint_circle_shader" type="Sprite" parent="Light"]
-visible = false
 material = SubResource( 2 )
-position = Vector2( 1.50732, 0.630249 )
-scale = Vector2( 9.16083, 9.16083 )
+scale = Vector2( 9, 9 )
 texture = ExtResource( 4 )
