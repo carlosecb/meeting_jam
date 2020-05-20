@@ -38,7 +38,6 @@ position = Vector2( 14.28, 106.307 )
 script = ExtResource( 3 )
 
 [node name="player" type="Sprite" parent="KinematicBody2D"]
-editor/display_folded = true
 position = Vector2( 500, 300 )
 
 [node name="icon" type="Sprite" parent="KinematicBody2D/player"]
