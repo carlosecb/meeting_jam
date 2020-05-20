@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://background.png" type="Texture" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -7,7 +7,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.9763, 32.0017 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -27.127, 32.2244, -31.7736, 27.278, -31.7736, -26.3828, -26.8272, -31.6289, 26.5337, -31.6289, 31.4801, -26.5326, 31.63, 26.5285, 25.9341, 32.0745 )
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 634.019, 10.495 )
 
 [node name="Node2D" type="Node2D"]
@@ -26,8 +29,11 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
 texture = ExtResource( 2 )
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
+occluder = SubResource( 2 )
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 515.669, 414.122 )
+position = Vector2( 514.669, 414.122 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 current = true
@@ -42,4 +48,4 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )

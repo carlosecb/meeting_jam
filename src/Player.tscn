@@ -2,15 +2,15 @@
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://gradient_circle.shader" type="Shader" id=3]
-[ext_resource path="res://background.png" type="Texture" id=4]
-[ext_resource path="res://light.png" type="Texture" id=5]
+[ext_resource path="res://light.png" type="Texture" id=3]
+[ext_resource path="res://gradient_circle.shader" type="Shader" id=4]
+[ext_resource path="res://background.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.1661, 31.2844 )
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 3 )
+shader = ExtResource( 4 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -22,7 +22,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Light" type="Light2D" parent="."]
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 energy = 0.4
 shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 1 )
@@ -33,4 +33,4 @@ shadow_filter_smooth = 11.1
 [node name="gradint_circle_shader" type="Sprite" parent="Light"]
 material = SubResource( 2 )
 scale = Vector2( 9, 9 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
