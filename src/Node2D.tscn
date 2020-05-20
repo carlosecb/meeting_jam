@@ -25,6 +25,7 @@ scale = Vector2( 9, 5 )
 texture = ExtResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 211.186, 398.374 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -43,9 +44,10 @@ position = Vector2( 500, 300 )
 [node name="icon" type="Sprite" parent="KinematicBody2D/player"]
 texture = ExtResource( 2 )
 
-[node name="gradient_circle_shader" type="Sprite" parent="KinematicBody2D/player"]
+[node name="gradint_circle_shader" type="Sprite" parent="KinematicBody2D/player"]
 material = SubResource( 2 )
-scale = Vector2( 15, 15 )
+position = Vector2( 1.50732, 0 )
+scale = Vector2( 9.16083, 9.16083 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
