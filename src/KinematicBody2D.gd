@@ -36,6 +36,8 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+	if is_on_floor():
+		on_glide = false
 	if on_glide:
 		velocity.y = glide
 	else:
