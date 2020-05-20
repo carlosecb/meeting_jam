@@ -44,7 +44,7 @@ position = Vector2( 500, 300 )
 [node name="icon" type="Sprite" parent="KinematicBody2D/player"]
 texture = ExtResource( 2 )
 
-[node name="gradint_circle_shader" type="Sprite" parent="KinematicBody2D/player"]
+[node name="gradient_circle_shader" type="Sprite" parent="KinematicBody2D/player"]
 material = SubResource( 2 )
 scale = Vector2( 15, 15 )
 texture = ExtResource( 1 )
