@@ -1,27 +1,64 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://gradient_circle.shader" type="Shader" id=1]
+[ext_resource path="res://background.png" type="Texture" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://background.png" type="Texture" id=3]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=3]
+[ext_resource path="res://gradient_circle.shader" type="Shader" id=4]
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 1 )
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 34.256, 32.3452 )
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 35, 35 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 634.019, 10.495 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="player" type="Sprite" parent="."]
-position = Vector2( 500, 300 )
-
-[node name="background" type="Sprite" parent="player"]
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 501.587, 298.413 )
 scale = Vector2( 9, 5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 400, 300 )
 
-[node name="icon" type="Sprite" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
 texture = ExtResource( 2 )
 
-[node name="gradint_circle_shader" type="Sprite" parent="player"]
-material = SubResource( 2 )
-scale = Vector2( 9, 9 )
-texture = ExtResource( 3 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="player" type="Sprite" parent="KinematicBody2D"]
+editor/display_folded = true
+position = Vector2( 500, 300 )
+
+[node name="icon" type="Sprite" parent="KinematicBody2D/player"]
+texture = ExtResource( 2 )
+
+[node name="gradint_circle_shader" type="Sprite" parent="KinematicBody2D/player"]
+material = SubResource( 1 )
+position = Vector2( 1.50732, 0 )
+scale = Vector2( 9.16083, 9.16083 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 498.93, 299.961 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 500, 300 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 6.34668, -11.1068 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 507.735, 472.829 )
+shape = SubResource( 4 )
