@@ -12,22 +12,32 @@ func _ready():
 #func _process(delta):
 #	pass
 
-export (int) var gravity = 2000
+const gravity = 10
 export (int) var speed = 100
+export (int) var jump_power = -350
+var on_glide = false
+export (int) var glide = 20
 
 var velocity = Vector2()
 
 func get_input():
-	velocity = Vector2()
+	velocity.x = 0
 	if Input.is_action_pressed('right'):
-		velocity.x += 1
+		velocity.x = speed
 	if Input.is_action_pressed('left'):
-	    velocity.x -= 1
-	if Input.is_action_pressed('jump'):
-		velocity.y -= 1
-	velocity = velocity.normalized() * speed
+	    velocity.x = -speed
+	if Input.is_action_just_pressed('jump'):
+		if is_on_floor():
+			velocity.y = jump_power
+		elif on_glide:
+			on_glide = false
+		elif (velocity.y >= 0) and (not on_glide):
+			on_glide = true
 
 func _physics_process(delta):
 	get_input()
-	velocity.y += delta * gravity
-	velocity = move_and_slide(velocity)
+	if on_glide:
+		velocity.y = glide
+	else:
+		velocity.y += gravity
+	velocity = move_and_slide(velocity, Vector2(0,-1))
