@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Meeting Jam"
 run/main_scene="res://Node2D.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/icon.png"
 
 [input]
 

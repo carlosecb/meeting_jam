@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/inverse_light.png-ec3b488f1037dce43f810db8cb0ff140.stex"
+path="res://.import/grey.png-3210aecc981688a99656f1964514886b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inverse_light.png"
-dest_files=[ "res://.import/inverse_light.png-ec3b488f1037dce43f810db8cb0ff140.stex" ]
+source_file="res://assets/main_mushroom/grey.png"
+dest_files=[ "res://.import/grey.png-3210aecc981688a99656f1964514886b.stex" ]
 
 [params]
 
