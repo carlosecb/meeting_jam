@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://light.png" type="Texture" id=3]
+[ext_resource path="res://inverse_light.png" type="Texture" id=3]
 [ext_resource path="res://Light.gd" type="Script" id=4]
 [ext_resource path="res://gradient_circle.shader" type="Shader" id=5]
 [ext_resource path="res://background.png" type="Texture" id=6]
@@ -23,6 +23,7 @@ __meta__ = {
 }
 
 [node name="icon" type="Sprite" parent="."]
+light_mask = 2
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
