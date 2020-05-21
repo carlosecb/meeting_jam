@@ -1,44 +1,44 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://blue_mushroom.png" type="Texture" id=2]
 [ext_resource path="res://light.png" type="Texture" id=3]
 [ext_resource path="res://Light.gd" type="Script" id=4]
 [ext_resource path="res://color_setter.shader" type="Shader" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.1661, 31.2844 )
+extents = Vector2( 33.9208, 54.9258 )
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 6 )
-shader_param/color = Vector3( 0, 0, 0 )
+shader_param/color = Vector3( 256, 256, 256 )
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 159.575
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="icon" type="Sprite" parent="."]
 light_mask = 2
+position = Vector2( 4.943, 14.2 )
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Light" type="Light2D" parent="."]
-material = SubResource( 4 )
+visible = false
+material = SubResource( 2 )
 texture = ExtResource( 3 )
 texture_scale = 0.7
-mode = 3
 shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 1 )
 script = ExtResource( 4 )
 
 [node name="LightRange" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LightRange"]
 shape = SubResource( 3 )
