@@ -4,7 +4,9 @@ extends Light2D
 # var a = 2
 # var b = "text"
 
-var time = 0.0
+var time : float = 0.0
+
+var current_color : Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,8 +16,19 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func radium(x):
-	var noise = sin(5.0*x)*cos(3.0*x);
+func set_shader_color(color : String):
+	var color_vec : Vector3
+	match color:
+		"red":
+			color_vec = Vector3(256,0,0)
+		"yellow":
+			color_vec = Vector3(128,128,0)
+		"blue":
+			color_vec = Vector3(0,0,256)
+	get_material().set_shader_param("color", color_vec)
+
+func radium(x : float) -> float:
+	var noise : float = sin(5.0*x)*cos(3.0*x);
 	return noise;
 
 func _process(delta):
