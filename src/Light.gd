@@ -20,4 +20,5 @@ func radium(x):
 
 func _process(delta):
 	time += delta
+	self.energy = 0.85 + 0.15*radium(0.4*time)
 	self.set_scale(Vector2(1.05,1.05) + 0.05*Vector2(1,1)*radium(0.4*time))
