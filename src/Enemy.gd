@@ -4,19 +4,31 @@ extends StaticBody2D
 # var a = 2
 # var b = "text"
 
+var target
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Sprite.visible = false
 
-func see(target):
-	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(position, target.position, [self], collision_mask)
-	print(result)
-	if target.position == result.position:
-		print(target.name + " found.")
+func in_range(body, enter):
+	if enter:
+		target = body
 	else:
-		print("Not found.")
-	return
+		target = null
+
+func see(body):
+	var space_state = get_world_2d().direct_space_state
+	var result = space_state.intersect_ray(position, body.position, [self], collision_mask)
+	if body == result.collider:
+		return true
+	return false
+
+func _physics_process(delta):
+	if target != null:
+		if see(target):
+			$Sprite.visible = true
+		else:
+			$Sprite.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

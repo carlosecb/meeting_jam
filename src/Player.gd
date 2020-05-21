@@ -54,4 +54,10 @@ func _physics_process(delta):
 func _on_LightRange_body_entered(body):
 	if "Enemy" in body.name:
 		print(body.name + " found.")
-		body.see(self)
+		body.in_range(self, true)
+
+
+func _on_LightRange_body_exited(body):
+	if "Enemy" in body.name:
+		print(body.name + " leaved.")
+		body.in_range(self, false)

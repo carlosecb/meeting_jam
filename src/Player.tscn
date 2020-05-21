@@ -43,3 +43,4 @@ texture = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LightRange"]
 shape = SubResource( 3 )
 [connection signal="body_entered" from="LightRange" to="." method="_on_LightRange_body_entered"]
+[connection signal="body_exited" from="LightRange" to="." method="_on_LightRange_body_exited"]
