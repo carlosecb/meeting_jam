@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CEU.png-11fd5ecdfc7898103a85300f42621ed0.stex"
+path="res://.import/sky.png-7a9cfe38c69a3eae9792ff21a98e19c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/CEU.png"
-dest_files=[ "res://.import/CEU.png-11fd5ecdfc7898103a85300f42621ed0.stex" ]
+source_file="res://assets/background/sky.png"
+dest_files=[ "res://.import/sky.png-7a9cfe38c69a3eae9792ff21a98e19c9.stex" ]
 
 [params]
 
