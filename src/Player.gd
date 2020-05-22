@@ -83,8 +83,8 @@ func _on_LightRange_body_exited(body):
 		print(body.name + " leaved.")
 		body.in_range(self, false)
 	if "ColorBlock" in body.name:
-		print(body.name + " found.")
-		body.in_range(self, true)
+		print(body.name + " leaved.")
+		body.in_range(self, false)
 
 func set_color(color : String):
 	match color:
