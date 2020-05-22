@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/icon_enemy.png" type="Texture" id=5]
 [ext_resource path="res://ColorBlock.gd" type="Script" id=6]
 [ext_resource path="res://Enemy.gd" type="Script" id=7]
-[ext_resource path="res://assets/CHÃO1.png" type="Texture" id=8]
+[ext_resource path="res://assets/tiles.png" type="Texture" id=8]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -92,8 +92,8 @@ texture = ExtResource( 3 )
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 503.913, 739.61 )
-scale = Vector2( 0.641714, 0.641714 )
+position = Vector2( 615.913, 691.61 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 4 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -146,9 +146,11 @@ texture = ExtResource( 5 )
 occluder = SubResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 1, 0 )
+scale = Vector2( 0.3, 0.3 )
 tile_set = SubResource( 6 )
 format = 1
-tile_data = PoolIntArray( 720896, 0, 0, 720900, 0, 0, 720904, 0, 0, 720908, 0, 0, 720912, 0, 0 )
+tile_data = PoolIntArray( 2555908, 0, 0, 2555912, 0, 0, 2555916, 0, 0, 2555920, 0, 0, 2555924, 0, 0, 2555928, 0, 0, 2555932, 0, 0, 2555936, 0, 0, 2555940, 0, 0, 2555944, 0, 0, 2555948, 0, 0, 2555952, 0, 0, 2555956, 0, 0, 2555960, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 606.676, 697.813 )
