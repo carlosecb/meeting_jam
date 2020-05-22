@@ -34,7 +34,9 @@ texture = ExtResource( 3 )
 texture_scale = 0.7
 color = Color( 1, 0, 0, 1 )
 shadow_enabled = true
-shadow_color = Color( 0, 0, 0, 1 )
+shadow_gradient_length = 5.0
+shadow_filter = 5
+shadow_filter_smooth = 30.0
 script = ExtResource( 4 )
 
 [node name="LightRange" type="Area2D" parent="."]

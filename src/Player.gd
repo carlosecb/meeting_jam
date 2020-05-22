@@ -93,3 +93,6 @@ func set_color(color : String):
 		"blue":
 			$Light.set_color(Color(0,0,1,1))
 	current_color = color
+
+func compare_color(color : String):
+	return color == current_color
