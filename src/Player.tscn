@@ -2,15 +2,15 @@
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/main_mushroom/blue.png" type="Texture" id=2]
-[ext_resource path="res://assets/light.png" type="Texture" id=3]
-[ext_resource path="res://Light.gd" type="Script" id=4]
-[ext_resource path="res://color_setter.shader" type="Shader" id=6]
+[ext_resource path="res://color_setter.shader" type="Shader" id=3]
+[ext_resource path="res://assets/light.png" type="Texture" id=4]
+[ext_resource path="res://Light.gd" type="Script" id=5]
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( -34, -9, -12, 54, 15, 54, 34, -21, -4, -55 )
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 6 )
+shader = ExtResource( 3 )
 shader_param/color = Vector3( 256, 256, 256 )
 
 [sub_resource type="CircleShape2D" id=3]
@@ -26,19 +26,17 @@ scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="Light" type="Light2D" parent="."]
-visible = false
 material = SubResource( 2 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 texture_scale = 0.7
 shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 1 )
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="LightRange" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LightRange"]
 shape = SubResource( 3 )

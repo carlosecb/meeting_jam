@@ -41,11 +41,11 @@ func get_input():
 	if Input.is_action_just_released("jump"):
 		if on_glide:
 			on_glide = false
-	if Input.is_action_pressed("turn_light_red"):
+	if Input.is_action_just_pressed("turn_light_red"):
 		$Light.set_shader_color("red")
-	if Input.is_action_pressed("turn_light_yellow"):
+	if Input.is_action_just_pressed("turn_light_yellow"):
 		$Light.set_shader_color("yellow")
-	if Input.is_action_pressed("turn_light_blue"):
+	if Input.is_action_just_pressed("turn_light_blue"):
 		$Light.set_shader_color("blue")
 	if Input.is_action_just_pressed("cycle_light_color"):
 		match $Light.current_color:
@@ -69,12 +69,18 @@ func _on_LightRange_body_entered(body):
 	if "Enemy" in body.name:
 		print(body.name + " found.")
 		body.in_range(self, true)
+	if "ColorBlock" in body.name:
+		print(body.name + " found.")
+		body.in_range(self, true)
 
 
 func _on_LightRange_body_exited(body):
 	if "Enemy" in body.name:
 		print(body.name + " leaved.")
 		body.in_range(self, false)
+	if "ColorBlock" in body.name:
+		print(body.name + " found.")
+		body.in_range(self, true)
 
 func set_color(color : String):
 	var color_vec
@@ -86,3 +92,6 @@ func set_color(color : String):
 
 	if color == "yellow":
 		color_vec = Vector3(128,128,0)
+
+func compare_color(color : String):
+	return color == $Light.current_color

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://assets/icon_enemy.png" type="Texture" id=2]
-[ext_resource path="res://Enemy.gd" type="Script" id=3]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ColorBlock.gd" type="Script" id=3]
+[ext_resource path="res://Enemy.gd" type="Script" id=4]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.9763, 32.0017 )
@@ -52,9 +53,26 @@ texture = ExtResource( 2 )
 [node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D2"]
 occluder = SubResource( 2 )
 
+[node name="ColorBlock" type="StaticBody2D" parent="."]
+position = Vector2( 879.231, 282.973 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorBlock"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="ColorBlock"]
+position = Vector2( 0, 1.19751 )
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="ColorBlock"]
+occluder = SubResource( 2 )
+
 [node name="Enemy" type="StaticBody2D" parent="."]
 position = Vector2( 880.763, 393.614 )
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 shape = SubResource( 1 )
@@ -65,7 +83,7 @@ texture = ExtResource( 2 )
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Enemy"]
 occluder = SubResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 514.669, 414.122 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
