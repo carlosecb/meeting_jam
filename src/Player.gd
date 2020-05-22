@@ -22,6 +22,8 @@ export (int) var glide = 30
 
 var velocity = Vector2()
 
+var current_color : String = "red"
+
 func get_input():
 	if is_on_floor():
 		on_glide = false
@@ -42,19 +44,19 @@ func get_input():
 		if on_glide:
 			on_glide = false
 	if Input.is_action_just_pressed("turn_light_red"):
-		$Light.set_shader_color("red")
+		set_color("red")
 	if Input.is_action_just_pressed("turn_light_yellow"):
 		$Light.set_shader_color("yellow")
 	if Input.is_action_just_pressed("turn_light_blue"):
 		$Light.set_shader_color("blue")
 	if Input.is_action_just_pressed("cycle_light_color"):
-		match $Light.current_color:
+		match current_color:
 			"red":
-				$Light.set_shader_color("yellow")
+				set_color("yellow")
 			"yellow":
-				$Light.set_shader_color("blue")
+				set_color("blue")
 			"blue":
-				$Light.set_shader_color("red")
+				set_color("red")
 
 func _physics_process(delta):
 	get_input()
@@ -83,15 +85,11 @@ func _on_LightRange_body_exited(body):
 		body.in_range(self, true)
 
 func set_color(color : String):
-	var color_vec
-	if color == "red":
-		color_vec = Vector3(256,0,0)
-	
-	if color == "blue":
-		color_vec = Vector3(0,0,256)
-
-	if color == "yellow":
-		color_vec = Vector3(128,128,0)
-
-func compare_color(color : String):
-	return color == $Light.current_color
+	match color:
+		"red":
+			$Light.set_color(Color(1,0,0,1))
+		"yellow":
+			$Light.set_color(Color(1,1,0,1))
+		"blue":
+			$Light.set_color(Color(0,0,1,1))
+	current_color = color
