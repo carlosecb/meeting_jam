@@ -17,10 +17,10 @@ func _ready():
 #	pass
 
 func radium(x : float) -> float:
-	var noise : float = sin(5.0*x)*cos(3.0*x);
+	var noise : float = sin(4.0 * x) * cos(4.0 * x);
 	return noise;
 
 func _process(delta):
 	time += delta
-	self.energy = 0.85 + 0.15*radium(0.4*time)
+	self.energy += 0.02 * radium(0.4 * time)
 	#self.set_scale(Vector2(1.05,1.05) + 0.05*Vector2(1,1)*radium(0.4*time))

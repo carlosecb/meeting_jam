@@ -90,7 +90,7 @@ func set_color(color : String):
 			$Light.set_color(Color(1,0,0,1))
 			$Icon.set_texture(preload("res://assets/main_mushroom/red.png"))
 		"yellow":
-			$Light.set_color(Color(1,1,0,1))
+			$Light.set_color(Color(0.5,0.5,0,1))
 			$Icon.set_texture(preload("res://assets/main_mushroom/yellow.png"))
 		"blue":
 			$Light.set_color(Color(0,0,1,1))
