@@ -88,10 +88,13 @@ func set_color(color : String):
 	match color:
 		"red":
 			$Light.set_color(Color(1,0,0,1))
+			$Icon.set_texture(preload("res://assets/main_mushroom/red.png"))
 		"yellow":
 			$Light.set_color(Color(1,1,0,1))
+			$Icon.set_texture(preload("res://assets/main_mushroom/yellow.png"))
 		"blue":
 			$Light.set_color(Color(0,0,1,1))
+			$Icon.set_texture(preload("res://assets/main_mushroom/blue.png"))
 	current_color = color
 
 func compare_color(color : String):
