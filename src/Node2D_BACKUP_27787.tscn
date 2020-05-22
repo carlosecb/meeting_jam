@@ -1,14 +1,26 @@
+<<<<<<< HEAD
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://assets/background/sky.png" type="Texture" id=1]
-[ext_resource path="res://assets/background/mountains.png" type="Texture" id=2]
-[ext_resource path="res://assets/background/mushrooms.png" type="Texture" id=3]
-[ext_resource path="res://assets/background/floor.png" type="Texture" id=4]
+[ext_resource path="res://assets/background/CEU.png" type="Texture" id=1]
+[ext_resource path="res://assets/background/FUNDO3.png" type="Texture" id=2]
+[ext_resource path="res://assets/background/FUNDO2.png" type="Texture" id=3]
+[ext_resource path="res://assets/background/FUNDO1.png" type="Texture" id=4]
 [ext_resource path="res://assets/icon_enemy.png" type="Texture" id=5]
 [ext_resource path="res://ColorBlock.gd" type="Script" id=6]
 [ext_resource path="res://Enemy.gd" type="Script" id=7]
-[ext_resource path="res://assets/tiles.png" type="Texture" id=8]
+[ext_resource path="res://assets/CHÃO1.png" type="Texture" id=8]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=9]
+=======
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/background/mountains.png" type="Texture" id=1]
+[ext_resource path="res://assets/background/mushrooms.png" type="Texture" id=2]
+[ext_resource path="res://assets/background/floor.png" type="Texture" id=3]
+[ext_resource path="res://assets/icon_enemy.png" type="Texture" id=4]
+[ext_resource path="res://ColorBlock.gd" type="Script" id=5]
+[ext_resource path="res://Enemy.gd" type="Script" id=6]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=7]
+>>>>>>> fe2423a521c37e6754f0eda96fc5cdff096d323c
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.9763, 32.0017 )
@@ -16,17 +28,17 @@ extents = Vector2( 31.9763, 32.0017 )
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -27.127, 32.2244, -31.7736, 27.278, -31.7736, -26.3828, -26.8272, -31.6289, 26.5337, -31.6289, 31.4801, -26.5326, 31.63, 26.5285, 25.9341, 32.0745 )
 
-[sub_resource type="NavigationPolygon" id=3]
+[sub_resource type="NavigationPolygon" id=4]
 vertices = PoolVector2Array( 0, 0, 255, 0, 255, 261, 0, 261 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
-[sub_resource type="OccluderPolygon2D" id=4]
+[sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 0, 31.3984, 255, 33.472, 255, 261, 0, 261 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 0, 27, 255, 26, 255, 261, 0, 261 )
 
-[sub_resource type="TileSet" id=6]
+[sub_resource type="TileSet" id=7]
 0/name = "CHÃO1.png"
 0/texture = ExtResource( 8 )
 0/tex_offset = Vector2( 0, 0 )
@@ -34,67 +46,74 @@ points = PoolVector2Array( 0, 27, 255, 26, 255, 261, 0, 261 )
 0/region = Rect2( 1, -2, 255, 261 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
-0/occluder = SubResource( 4 )
+0/occluder = SubResource( 5 )
 0/navigation_offset = Vector2( 0, 0 )
-0/navigation = SubResource( 3 )
+0/navigation = SubResource( 4 )
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1591.88, 10.495 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+<<<<<<< HEAD
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 513.904, 76.8739 )
-scale = Vector2( 0.286959, 0.286959 )
+position = Vector2( 557.971, -9.4651 )
+scale = Vector2( 0.358803, 0.358803 )
 texture = ExtResource( 1 )
+=======
+>>>>>>> fe2423a521c37e6754f0eda96fc5cdff096d323c
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.2, 1 )
-motion_offset = Vector2( -420, 0 )
-motion_mirroring = Vector2( 1330, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( -74.1991, 241.478 )
+position = Vector2( 227.164, 539.679 )
 scale = Vector2( 0.447139, 0.447139 )
 texture = ExtResource( 2 )
-centered = false
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1563.56, 559.177 )
+scale = Vector2( 0.447139, 0.447139 )
+texture = ExtResource( 2 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.4, 1 )
-motion_offset = Vector2( -500, 0 )
-motion_mirroring = Vector2( 1790, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 3.56232, 331.888 )
+position = Vector2( 603.391, 588.633 )
 scale = Vector2( 0.625703, 0.625703 )
 texture = ExtResource( 3 )
-centered = false
+
+<<<<<<< HEAD
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 2400.63, 588.231 )
+scale = Vector2( 0.625703, 0.625703 )
+texture = ExtResource( 3 )
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 757.631, 432.383 )
+__meta__ = {
+"_edit_group_": true
+}
+>>>>>>> fe2423a521c37e6754f0eda96fc5cdff096d323c
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 2399, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( -13.4524, 500.755 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 4 )
-centered = false
 
 [node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 1184.72, 500.57 )
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( 503.913, 739.61 )
+scale = Vector2( 0.641714, 0.641714 )
 texture = ExtResource( 4 )
-centered = false
-flip_h = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 visible = false
@@ -146,14 +165,12 @@ texture = ExtResource( 5 )
 occluder = SubResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 1, 0 )
-scale = Vector2( 0.3, 0.3 )
-tile_set = SubResource( 6 )
+tile_set = SubResource( 7 )
 format = 1
-tile_data = PoolIntArray( 1835008, 0, 0, 1835012, 0, 0, 1835016, 0, 0, 1835020, 0, 0, 1835024, 0, 0, 1835028, 0, 0, 1835032, 0, 0, 1835036, 0, 0, 1835040, 0, 0, 1835044, 0, 0, 1835048, 0, 0, 1835052, 0, 0, 1835056, 0, 0, 1835060, 0, 0, 1835064, 0, 0, 1835068, 0, 0, 1835072, 0, 0, 1835076, 0, 0, 1835080, 0, 0, 1835084, 0, 0, 1835088, 0, 0, 1835092, 0, 0, 1835096, 0, 0, 1835100, 0, 0, 1835104, 0, 0, 1835108, 0, 0, 1835112, 0, 0, 1835116, 0, 0, 1835120, 0, 0, 1835124, 0, 0 )
+tile_data = PoolIntArray( 720896, 0, 0, 720900, 0, 0, 720904, 0, 0, 720908, 0, 0, 720912, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 520.132, 442.908 )
+position = Vector2( 606.676, 697.813 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2( -6.50684, -143.156 )
@@ -162,11 +179,10 @@ smoothing_enabled = true
 smoothing_speed = 1.6
 
 [node name="Floor" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2( 570.946, 1084.38 )
+position = Vector2( 589.491, 796.926 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource( 7 )
+shape = SubResource( 3 )
