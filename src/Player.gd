@@ -22,7 +22,7 @@ export (int) var glide = 30
 
 var velocity = Vector2()
 
-var current_color : String = "red"
+var current_color : String = "blue"
 
 func get_input():
 	if is_on_floor():
