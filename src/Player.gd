@@ -46,9 +46,9 @@ func get_input():
 	if Input.is_action_just_pressed("turn_light_red"):
 		set_color("red")
 	if Input.is_action_just_pressed("turn_light_yellow"):
-		$Light.set_shader_color("yellow")
+		set_color("yellow")
 	if Input.is_action_just_pressed("turn_light_blue"):
-		$Light.set_shader_color("blue")
+		set_color("blue")
 	if Input.is_action_just_pressed("cycle_light_color"):
 		match current_color:
 			"red":

@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://assets/background/FUNDO3.png" type="Texture" id=1]
-[ext_resource path="res://assets/background/FUNDO2.png" type="Texture" id=2]
-[ext_resource path="res://assets/background/FUNDO1.png" type="Texture" id=3]
-[ext_resource path="res://assets/icon_enemy.png" type="Texture" id=4]
-[ext_resource path="res://ColorBlock.gd" type="Script" id=5]
-[ext_resource path="res://Enemy.gd" type="Script" id=6]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/background/CEU.png" type="Texture" id=1]
+[ext_resource path="res://assets/background/FUNDO3.png" type="Texture" id=2]
+[ext_resource path="res://assets/background/FUNDO2.png" type="Texture" id=3]
+[ext_resource path="res://assets/background/FUNDO1.png" type="Texture" id=4]
+[ext_resource path="res://assets/icon_enemy.png" type="Texture" id=5]
+[ext_resource path="res://ColorBlock.gd" type="Script" id=6]
+[ext_resource path="res://Enemy.gd" type="Script" id=7]
+[ext_resource path="res://assets/CHÃO1.png" type="Texture" id=8]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.9763, 32.0017 )
@@ -14,53 +16,80 @@ extents = Vector2( 31.9763, 32.0017 )
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -27.127, 32.2244, -31.7736, 27.278, -31.7736, -26.3828, -26.8272, -31.6289, 26.5337, -31.6289, 31.4801, -26.5326, 31.63, 26.5285, 25.9341, 32.0745 )
 
+[sub_resource type="NavigationPolygon" id=4]
+vertices = PoolVector2Array( 0, 0, 255, 0, 255, 261, 0, 261 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( 0, 31.3984, 255, 33.472, 255, 261, 0, 261 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 27, 255, 26, 255, 261, 0, 261 )
+
+[sub_resource type="TileSet" id=7]
+0/name = "CHÃO1.png"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 1, -2, 255, 261 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/occluder = SubResource( 5 )
+0/navigation_offset = Vector2( 0, 0 )
+0/navigation = SubResource( 4 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1591.88, 10.495 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 557.971, -9.4651 )
+scale = Vector2( 0.358803, 0.358803 )
+texture = ExtResource( 1 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.2, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 457.16, 351.526 )
-scale = Vector2( 0.623156, 0.623156 )
-texture = ExtResource( 1 )
+position = Vector2( 227.164, 539.679 )
+scale = Vector2( 0.447139, 0.447139 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1563.56, 559.177 )
+scale = Vector2( 0.447139, 0.447139 )
+texture = ExtResource( 2 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.4, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 562.433, 453.377 )
+position = Vector2( 603.391, 588.633 )
 scale = Vector2( 0.625703, 0.625703 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 2400.63, 588.231 )
+scale = Vector2( 0.625703, 0.625703 )
+texture = ExtResource( 3 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 483.08, 601.808 )
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 503.913, 739.61 )
 scale = Vector2( 0.641714, 0.641714 )
-texture = ExtResource( 3 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
-visible = false
-position = Vector2( 757.631, 432.383 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
 texture = ExtResource( 4 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
-occluder = SubResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -75,7 +104,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D2"]
 position = Vector2( 0, 1.19751 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D2"]
 occluder = SubResource( 2 )
@@ -84,7 +113,7 @@ occluder = SubResource( 2 )
 editor/display_folded = true
 visible = false
 position = Vector2( 879.231, 282.973 )
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -94,7 +123,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="ColorBlock"]
 position = Vector2( 0, 1.19751 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ColorBlock"]
 occluder = SubResource( 2 )
@@ -103,28 +132,33 @@ occluder = SubResource( 2 )
 editor/display_folded = true
 visible = false
 position = Vector2( 880.763, 393.614 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Enemy"]
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Enemy"]
 occluder = SubResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 546.662, 551.924 )
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 7 )
+format = 1
+tile_data = PoolIntArray( 720896, 0, 0, 720900, 0, 0, 720904, 0, 0, 720908, 0, 0, 720912, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 606.676, 697.813 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
-visible = false
+position = Vector2( -6.50684, -143.156 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 1.6
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2( 543.233, 605.887 )
+position = Vector2( 589.491, 796.926 )
 __meta__ = {
 "_edit_group_": true
 }
