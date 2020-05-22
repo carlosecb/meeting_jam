@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/light.png" type="Texture" id=4]
 [ext_resource path="res://Light.gd" type="Script" id=5]
 
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( -34, -9, -12, 54, 15, 54, 34, -21, -4, -55 )
 

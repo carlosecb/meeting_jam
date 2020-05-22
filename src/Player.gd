@@ -30,8 +30,10 @@ func get_input():
 		velocity.x = 0
 	if Input.is_action_pressed('right'):
 		velocity.x = speed
+		$Icon.flip_h = false
 	if Input.is_action_pressed('left'):
 		velocity.x = -speed
+		$Icon.flip_h = true
 	if Input.is_action_just_pressed('jump'):
 		if is_on_floor():
 			velocity.y = jump_power
@@ -88,13 +90,13 @@ func set_color(color : String):
 	match color:
 		"red":
 			$Light.set_color(Color(1,0,0,1))
-			$Icon.set_texture(preload("res://assets/main_mushroom/red.png"))
+			$Icon.set_texture(preload("res://assets/mushroom_man/red.png"))
 		"yellow":
 			$Light.set_color(Color(0.5,0.5,0,1))
-			$Icon.set_texture(preload("res://assets/main_mushroom/yellow.png"))
+			$Icon.set_texture(preload("res://assets/mushroom_man/yellow.png"))
 		"blue":
 			$Light.set_color(Color(0,0,1,1))
-			$Icon.set_texture(preload("res://assets/main_mushroom/blue.png"))
+			$Icon.set_texture(preload("res://assets/mushroom_man/blue.png"))
 	current_color = color
 
 func compare_color(color : String):
