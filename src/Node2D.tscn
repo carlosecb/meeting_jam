@@ -59,7 +59,7 @@ extents = Vector2( 1591.88, 10.495 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 605.904, 127.874 )
+position = Vector2( 601.904, 127.874 )
 scale = Vector2( 0.286959, 0.286959 )
 texture = ExtResource( 1 )
 
