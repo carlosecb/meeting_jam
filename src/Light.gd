@@ -20,10 +20,13 @@ func set_shader_color(color : String):
 	var color_vec : Vector3
 	match color:
 		"red":
+			set_color(Color(1,0,0,1))
 			color_vec = Vector3(256,0,0)
 		"yellow":
+			set_color(Color(1,1,0,1))
 			color_vec = Vector3(128,128,0)
 		"blue":
+			set_color(Color(0,0,1,1))
 			color_vec = Vector3(0,0,256)
 	get_material().set_shader_param("color", color_vec)
 	current_color = color
