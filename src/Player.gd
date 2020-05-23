@@ -13,10 +13,10 @@ func _ready():
 #func _process(delta):
 #	pass
 
-const gravity = 10
+const gravity = 980
 export (int) var speed = 100
-export (int) var jump_power = -250
-export (int) var jump_extra = -5
+export (int) var jump_power = -350
+export (int) var jump_extra = -500
 var on_glide = false
 export (int) var glide = 30
 
@@ -24,7 +24,7 @@ var velocity = Vector2()
 
 var current_color : String = "blue"
 
-func get_input():
+func get_input(delta):
 	if is_on_floor():
 		on_glide = false
 		velocity.x = 0
@@ -43,7 +43,7 @@ func get_input():
 			velocity.y = jump_power
 	if Input.is_action_pressed("jump"):
 		if velocity.y < 0:
-			velocity.y += jump_extra
+			velocity.y += delta * jump_extra
 		elif (velocity.y >= 0) and (not on_glide):
 			on_glide = true
 	if Input.is_action_just_released("jump"):
@@ -65,11 +65,11 @@ func get_input():
 				set_color("red")
 
 func _physics_process(delta):
-	get_input()
+	get_input(delta)
 	if on_glide:
 		velocity.y = glide
 	else:
-		velocity.y += gravity
+		velocity.y += delta * gravity
 	velocity = move_and_slide(velocity, Vector2(0,-1))
 
 
