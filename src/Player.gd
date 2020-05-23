@@ -28,20 +28,20 @@ func get_input():
 	if is_on_floor():
 		on_glide = false
 		velocity.x = 0
-	if Input.is_action_pressed('right'):
+	if Input.is_action_pressed("right"):
 		velocity.x = speed
 		$Icon.play(current_color + "_walk")
 		$Icon.flip_h = false
-	elif Input.is_action_pressed('left'):
+	elif Input.is_action_pressed("left"):
 		velocity.x = -speed
 		$Icon.play(current_color + "_walk")
 		$Icon.flip_h = true
 	else:
 		$Icon.play(current_color + "_idle")
-	if Input.is_action_just_pressed('jump'):
+	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_power
-	if Input.is_action_pressed('jump'):
+	if Input.is_action_pressed("jump"):
 		if velocity.y < 0:
 			velocity.y += jump_extra
 		elif (velocity.y >= 0) and (not on_glide):

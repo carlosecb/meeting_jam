@@ -93,7 +93,6 @@ points = PoolVector2Array( -34, -9, -12, 54.7, 15, 54.7, 34, -21, -4, -55 )
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 3 )
-shader_param/color = Vector3( 256, 256, 256 )
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 159.575
