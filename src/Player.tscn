@@ -7,7 +7,7 @@
 [ext_resource path="res://Light.gd" type="Script" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( -34, -9, -12, 54, 15, 54, 34, -21, -4, -55 )
+points = PoolVector2Array( -34, -9, -12, 54.7, 15, 54.7, 34, -21, -4, -55 )
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
