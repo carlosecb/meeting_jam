@@ -1,35 +1,36 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://title_screen/linux_libertine/LinLibertine_DR.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/player/blue/idle/blue_000.png" type="Texture" id=2]
-[ext_resource path="res://assets/player/blue/idle/blue_003.png" type="Texture" id=3]
-[ext_resource path="res://assets/player/blue/idle/blue_002.png" type="Texture" id=4]
+[ext_resource path="res://TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://title_screen/linux_libertine/LinLibertine_DR.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://title_screen/linux_libertine/LinLibertine_aBS.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/player/blue/idle/blue_000.png" type="Texture" id=4]
 [ext_resource path="res://assets/player/blue/idle/blue_001.png" type="Texture" id=5]
-[ext_resource path="res://StartGame.gd" type="Script" id=6]
-[ext_resource path="res://title_screen/linux_libertine/LinLibertine_aBS.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/player/blue/idle/blue_002.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/blue/idle/blue_003.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 7 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="AnimatedTexture" id=3]
 flags = 4
 frames = 4
 fps = 2.0
-frame_0/texture = ExtResource( 2 )
+frame_0/texture = ExtResource( 4 )
 frame_1/texture = ExtResource( 5 )
 frame_1/delay_sec = 0.0
-frame_2/texture = ExtResource( 4 )
+frame_2/texture = ExtResource( 6 )
 frame_2/delay_sec = 0.0
-frame_3/texture = ExtResource( 3 )
+frame_3/texture = ExtResource( 7 )
 frame_3/delay_sec = 0.0
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -72,7 +73,7 @@ margin_right = 418.0
 margin_bottom = 20.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
-script = ExtResource( 6 )
+action_mode = 0
 
 [node name="Label" type="Label" parent="Menu/CenterRow/Buttons/StartGame"]
 margin_right = 40.0
@@ -103,4 +104,4 @@ margin_bottom = 463.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Version 1.0"
-[connection signal="pressed" from="Menu/CenterRow/Buttons/StartGame" to="Menu/CenterRow/Buttons/StartGame" method="_on_StartGame_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/StartGame" to="." method="_on_StartGame_pressed"]
