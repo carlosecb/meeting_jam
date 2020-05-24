@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/hud/SceneTransition.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scene/Black:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="SceneTransition" type="CanvasLayer"]
+layer = 10
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade = SubResource( 1 )
+
+[node name="Scene" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Black" type="ColorRect" parent="Scene"]
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 1044.0
+margin_bottom = 620.0
+color = Color( 0, 0, 0, 0 )

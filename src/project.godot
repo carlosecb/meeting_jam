@@ -19,6 +19,10 @@ config/name="Meeting Jam"
 run/main_scene="res://Node2D.tscn"
 config/icon="res://assets/icon.png"
 
+[autoload]
+
+SceneTransition="*res://assets/hud/SceneTransition.tscn"
+
 [compression]
 
 formats/size/fullscreen=false
