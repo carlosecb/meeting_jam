@@ -1,25 +1,25 @@
 [gd_scene load_steps=36 format=2]
 
-[ext_resource path="res://Node2D.gd" type="Script" id=1]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/background/sky.png" type="Texture" id=3]
-[ext_resource path="res://assets/background/mountains.png" type="Texture" id=4]
-[ext_resource path="res://assets/background/mushrooms.png" type="Texture" id=5]
-[ext_resource path="res://assets/background/floor.png" type="Texture" id=6]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tiles/left_edge.png" type="Texture" id=2]
+[ext_resource path="res://ColorBlock.gd" type="Script" id=3]
+[ext_resource path="res://assets/tiles/right_floor.png" type="Texture" id=4]
+[ext_resource path="res://assets/scene/tree_0.png" type="Texture" id=5]
+[ext_resource path="res://Game.gd" type="Script" id=6]
 [ext_resource path="res://assets/icon_enemy.png" type="Texture" id=7]
-[ext_resource path="res://ColorBlock.gd" type="Script" id=8]
-[ext_resource path="res://Enemy.gd" type="Script" id=9]
-[ext_resource path="res://assets/scene/tree_0.png" type="Texture" id=10]
+[ext_resource path="res://assets/background/sky.png" type="Texture" id=8]
+[ext_resource path="res://assets/background/mushrooms.png" type="Texture" id=9]
+[ext_resource path="res://assets/background/floor.png" type="Texture" id=10]
 [ext_resource path="res://assets/tiles/floor_1.png" type="Texture" id=11]
-[ext_resource path="res://assets/tiles/left_edge.png" type="Texture" id=12]
-[ext_resource path="res://assets/tiles/right_edge.png" type="Texture" id=13]
-[ext_resource path="res://assets/tiles/floor_0.png" type="Texture" id=14]
+[ext_resource path="res://assets/scene/trunk_0.png" type="Texture" id=12]
+[ext_resource path="res://assets/background/mountains.png" type="Texture" id=13]
+[ext_resource path="res://Enemy.gd" type="Script" id=14]
 [ext_resource path="res://assets/tiles/left_floor.png" type="Texture" id=15]
-[ext_resource path="res://assets/tiles/right_floor.png" type="Texture" id=16]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=17]
-[ext_resource path="res://music_sfx/game_play.wav" type="AudioStream" id=18]
-[ext_resource path="res://assets/scene/trunk_0.png" type="Texture" id=19]
-[ext_resource path="res://assets/scene/trunk_1.png" type="Texture" id=20]
+[ext_resource path="res://assets/tiles/floor_0.png" type="Texture" id=16]
+[ext_resource path="res://assets/tiles/right_edge.png" type="Texture" id=17]
+[ext_resource path="res://assets/scene/trunk_1.png" type="Texture" id=18]
+[ext_resource path="res://music_sfx/game_play.wav" type="AudioStream" id=19]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.9763, 32.0017 )
@@ -33,37 +33,37 @@ polygon = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 256, 256, 0, 256, 0, 32, 256, 32 )
 
-[sub_resource type="OccluderPolygon2D" id=9]
+[sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 0, 0, 246, 0, 246, 256, 0, 256 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 0, 45, 246, 44, 246, 256, 0, 256 )
 
-[sub_resource type="OccluderPolygon2D" id=10]
+[sub_resource type="OccluderPolygon2D" id=7]
 polygon = PoolVector2Array( 0, 0, 245, 0, 245, 255, 0, 255 )
 
-[sub_resource type="ConvexPolygonShape2D" id=11]
+[sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 0, 43, 245, 43, 245, 255, 0, 255 )
 
-[sub_resource type="OccluderPolygon2D" id=12]
+[sub_resource type="OccluderPolygon2D" id=9]
 polygon = PoolVector2Array( 0, 0, 257, 0, 257, 252, 0, 252 )
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
+[sub_resource type="ConvexPolygonShape2D" id=10]
 points = PoolVector2Array( 0, 0, 257, 0, 257, 252, 0, 252 )
 
-[sub_resource type="OccluderPolygon2D" id=14]
+[sub_resource type="OccluderPolygon2D" id=11]
 polygon = PoolVector2Array( 0, 0, 257, 0, 257, 247, 0, 247 )
 
-[sub_resource type="ConvexPolygonShape2D" id=15]
+[sub_resource type="ConvexPolygonShape2D" id=12]
 points = PoolVector2Array( 0, 0, 257, 0, 257, 247, 0, 247 )
 
-[sub_resource type="OccluderPolygon2D" id=16]
+[sub_resource type="OccluderPolygon2D" id=13]
 polygon = PoolVector2Array( 0, 0, 258, 0, 258, 251, 0, 251 )
 
-[sub_resource type="ConvexPolygonShape2D" id=17]
+[sub_resource type="ConvexPolygonShape2D" id=14]
 points = PoolVector2Array( 0, 0, 258, 0, 258, 251, 0, 251 )
 
-[sub_resource type="TileSet" id=5]
+[sub_resource type="TileSet" id=15]
 0/name = "floor_1.png 0"
 0/texture = ExtResource( 11 )
 0/tex_offset = Vector2( 0, 0 )
@@ -73,6 +73,11 @@ points = PoolVector2Array( 0, 0, 258, 0, 258, 251, 0, 251 )
 0/occluder_offset = Vector2( 0, 0 )
 0/occluder = SubResource( 3 )
 0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 4 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
@@ -82,53 +87,68 @@ points = PoolVector2Array( 0, 0, 258, 0, 258, 251, 0, 251 )
 } ]
 0/z_index = 0
 1/name = "edge_0.png 1"
-1/texture = ExtResource( 12 )
+1/texture = ExtResource( 2 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 12, 1, 246, 256 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
-1/occluder = SubResource( 9 )
+1/occluder = SubResource( 5 )
 1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 6 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
 1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "right_edge.png 2"
+2/texture = ExtResource( 17 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 3, 245, 255 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/occluder = SubResource( 7 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 8 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 8 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-1/z_index = 0
-2/name = "right_edge.png 2"
-2/texture = ExtResource( 13 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 3, 245, 255 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/occluder = SubResource( 10 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 11 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
 2/z_index = 0
 3/name = "floor_0.png 3"
-3/texture = ExtResource( 14 )
+3/texture = ExtResource( 16 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 1, 2, 257, 252 )
 3/tile_mode = 0
 3/occluder_offset = Vector2( 0, 0 )
-3/occluder = SubResource( 12 )
+3/occluder = SubResource( 9 )
 3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 10 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
+"shape": SubResource( 10 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
@@ -139,52 +159,60 @@ points = PoolVector2Array( 0, 0, 258, 0, 258, 251, 0, 251 )
 4/region = Rect2( -2, 3, 257, 247 )
 4/tile_mode = 0
 4/occluder_offset = Vector2( 0, 0 )
-4/occluder = SubResource( 14 )
+4/occluder = SubResource( 11 )
 4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 12 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 15 ),
+"shape": SubResource( 12 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
 5/name = "right_floor.png 5"
-5/texture = ExtResource( 16 )
+5/texture = ExtResource( 4 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 1, 2, 258, 251 )
 5/tile_mode = 0
 5/occluder_offset = Vector2( 0, 0 )
-5/occluder = SubResource( 16 )
+5/occluder = SubResource( 13 )
 5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 14 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 17 ),
+"shape": SubResource( 14 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource( 6 )
 
-[node name="HUD" parent="." instance=ExtResource( 2 )]
+[node name="HUD" parent="." instance=ExtResource( 20 )]
 layer = 2
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
 position = Vector2( 601.904, 172.874 )
 scale = Vector2( 0.286959, 0.286959 )
 z_index = -4
 z_as_relative = false
-texture = ExtResource( 3 )
+texture = ExtResource( 8 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-editor/display_folded = true
 z_index = -3
 z_as_relative = false
 motion_scale = Vector2( 0.2, 0.2 )
@@ -194,11 +222,10 @@ motion_mirroring = Vector2( 1330, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( -74.1991, 241.478 )
 scale = Vector2( 0.447139, 0.447139 )
-texture = ExtResource( 4 )
+texture = ExtResource( 13 )
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-editor/display_folded = true
 z_index = -2
 z_as_relative = false
 motion_scale = Vector2( 0.4, 0.4 )
@@ -208,11 +235,10 @@ motion_mirroring = Vector2( 1790, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 3.56232, 331.888 )
 scale = Vector2( 0.625703, 0.625703 )
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-editor/display_folded = true
 z_index = -1
 z_as_relative = false
 motion_mirroring = Vector2( 2399, 0 )
@@ -220,18 +246,17 @@ motion_mirroring = Vector2( 2399, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2( -13.4524, 507.237 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 6 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2( 1184.72, 509.57 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 6 )
+texture = ExtResource( 10 )
 centered = false
 flip_h = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-editor/display_folded = true
 visible = false
 position = Vector2( 757.631, 379.873 )
 __meta__ = {
@@ -250,10 +275,9 @@ texture = ExtResource( 7 )
 occluder = SubResource( 2 )
 
 [node name="ColorBlock" type="StaticBody2D" parent="."]
-editor/display_folded = true
 visible = false
 position = Vector2( 879.231, 282.973 )
-script = ExtResource( 8 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -269,10 +293,9 @@ texture = ExtResource( 7 )
 occluder = SubResource( 2 )
 
 [node name="Enemy" type="StaticBody2D" parent="."]
-editor/display_folded = true
 visible = false
 position = Vector2( 880.763, 393.614 )
-script = ExtResource( 9 )
+script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 shape = SubResource( 1 )
@@ -287,18 +310,18 @@ occluder = SubResource( 2 )
 [node name="tree_0" type="Sprite" parent="."]
 position = Vector2( 605.482, 326.78 )
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 10 )
+texture = ExtResource( 5 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, -5 )
 scale = Vector2( 0.3, 0.3 )
 z_as_relative = false
-tile_set = SubResource( 5 )
+tile_set = SubResource( 15 )
 cell_size = Vector2( 256, 256 )
 format = 1
 tile_data = PoolIntArray( 327688, 1, 0, 327689, 0, 0, 327690, 2, 0, 393222, 0, 0, 393224, 4, 0, 393225, 3, 0, 393226, 5, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 3, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 17 )]
+[node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 210.499, 473.706 )
 z_as_relative = false
 
@@ -314,14 +337,13 @@ drag_margin_bottom = 0.1
 editor_draw_drag_margin = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource( 18 )
+stream = ExtResource( 19 )
 volume_db = 5.0
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
 layer = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxForeground"]
-editor/display_folded = true
 z_index = 1
 z_as_relative = false
 motion_scale = Vector2( 1.2, 1.2 )
@@ -330,11 +352,11 @@ motion_offset = Vector2( 0, 50 )
 [node name="Truck_v1" type="Sprite" parent="ParallaxForeground/ParallaxLayer"]
 position = Vector2( 48.265, 376.382 )
 scale = Vector2( 0.254335, 0.254335 )
-texture = ExtResource( 19 )
+texture = ExtResource( 12 )
 
 [node name="Truck_v2" type="Sprite" parent="ParallaxForeground/ParallaxLayer"]
 position = Vector2( 1005.94, 377.46 )
 scale = Vector2( 0.250784, 0.250784 )
-texture = ExtResource( 20 )
+texture = ExtResource( 18 )
 [connection signal="health_changed" from="Player" to="HUD" method="_on_Player_health_changed"]
 [connection signal="player_killed" from="Player" to="." method="_on_Player_player_killed"]

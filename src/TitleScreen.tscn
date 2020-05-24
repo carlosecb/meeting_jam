@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://title_screen/linux_libertine/LinLibertine_DR.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/player/blue/idle/blue_000.png" type="Texture" id=2]
+[ext_resource path="res://assets/player/blue/idle/blue_003.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/blue/idle/blue_002.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/blue/idle/blue_001.png" type="Texture" id=5]
+[ext_resource path="res://StartGame.gd" type="Script" id=6]
+[ext_resource path="res://title_screen/linux_libertine/LinLibertine_aBS.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 7 )
+
+[sub_resource type="AnimatedTexture" id=3]
+flags = 4
+frames = 4
+fps = 2.0
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 5 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 4 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 3 )
+frame_3/delay_sec = 0.0
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 960.0
+margin_bottom = 640.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Menu"]
+margin_left = 264.0
+margin_right = 575.0
+margin_bottom = 115.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = "Inocybe"
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 119.0
+margin_right = 840.0
+margin_bottom = 348.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_top = 104.0
+margin_right = 418.0
+margin_bottom = 124.0
+size_flags_horizontal = 7
+size_flags_vertical = 4
+
+[node name="StartGame" type="Button" parent="Menu/CenterRow/Buttons"]
+margin_right = 418.0
+margin_bottom = 20.0
+size_flags_horizontal = 5
+size_flags_vertical = 4
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Menu/CenterRow/Buttons/StartGame"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 2 )
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
+margin_left = 422.0
+margin_right = 840.0
+margin_bottom = 229.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
+margin_left = 141.0
+margin_right = 277.0
+margin_bottom = 229.0
+texture = SubResource( 3 )
+
+[node name="Label" type="Label" parent="Menu"]
+margin_top = 449.0
+margin_right = 840.0
+margin_bottom = 463.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Version 1.0"
+[connection signal="pressed" from="Menu/CenterRow/Buttons/StartGame" to="Menu/CenterRow/Buttons/StartGame" method="_on_StartGame_pressed"]

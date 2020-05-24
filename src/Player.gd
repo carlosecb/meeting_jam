@@ -44,11 +44,13 @@ func get_input(delta):
 		velocity.x = 0
 	if Input.is_action_pressed("right"):
 		velocity.x = speed
-		$Icon.play(current_color + "_walk")
+		if is_on_floor():
+			$Icon.play(current_color + "_walk")
 		$Icon.flip_h = false
 	elif Input.is_action_pressed("left"):
 		velocity.x = -speed
-		$Icon.play(current_color + "_walk")
+		if is_on_floor():
+			$Icon.play(current_color + "_walk")
 		$Icon.flip_h = true
 	else:
 		$Icon.play(current_color + "_idle")
