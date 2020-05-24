@@ -25,12 +25,10 @@ script = ExtResource( 1 )
 anims/fade = SubResource( 1 )
 
 [node name="Scene" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 1080.0
+margin_bottom = 720.0
 
 [node name="Black" type="ColorRect" parent="Scene"]
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 1044.0
-margin_bottom = 620.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
