@@ -55,6 +55,7 @@ func get_input(delta):
 	else:
 		$Icon.play(current_color + "_idle")
 	if Input.is_action_just_pressed("jump"):
+		$Icon.play(current_color + "_idle")
 		if is_on_floor():
 			velocity.y = jump_power
 	if Input.is_action_pressed("jump"):

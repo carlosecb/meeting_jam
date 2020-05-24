@@ -89,7 +89,7 @@ animations = [ {
 } ]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( -34, -9, -12, 54.7, 15, 54.7, 34, -21, -4, -55 )
+points = PoolVector2Array( -14, -15, -11, 54.7, 11, 54.7, 16, -15, 0, -48 )
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 42 )
@@ -102,7 +102,7 @@ script = ExtResource( 1 )
 
 [node name="Icon" type="AnimatedSprite" parent="."]
 light_mask = 2
-position = Vector2( -1.057, 3.2 )
+position = Vector2( -0.0570002, 3.2 )
 scale = Vector2( 0.47, 0.47 )
 frames = SubResource( 1 )
 animation = "yellow_walk"
