@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/background/floor.png" type="Texture" id=6]
 [ext_resource path="res://ColorBlock.gd" type="Script" id=7]
 [ext_resource path="res://assets/icon_enemy.png" type="Texture" id=8]
-[ext_resource path="res://Enemy.gd" type="Script" id=9]
+[ext_resource path="res://assets/enemies/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/scene/tree_0.png" type="Texture" id=10]
 [ext_resource path="res://assets/tiles/tileset.tres" type="TileSet" id=11]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=12]
@@ -100,20 +100,7 @@ texture = ExtResource( 8 )
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ColorBlock"]
 occluder = SubResource( 2 )
 
-[node name="Enemy" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2( 880.763, 393.614 )
-script = ExtResource( 9 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-shape = SubResource( 1 )
-disabled = true
-
-[node name="Sprite" type="Sprite" parent="Enemy"]
-texture = ExtResource( 8 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Enemy"]
-occluder = SubResource( 2 )
+[node name="RigidBody2D" parent="." instance=ExtResource( 9 )]
 
 [node name="tree_0" type="Sprite" parent="."]
 position = Vector2( 605.482, 326.78 )
