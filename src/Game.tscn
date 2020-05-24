@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
@@ -10,185 +10,17 @@
 [ext_resource path="res://assets/icon_enemy.png" type="Texture" id=8]
 [ext_resource path="res://Enemy.gd" type="Script" id=9]
 [ext_resource path="res://assets/scene/tree_0.png" type="Texture" id=10]
-[ext_resource path="res://assets/tiles/floor_1.png" type="Texture" id=11]
-[ext_resource path="res://assets/tiles/left_floor.png" type="Texture" id=12]
-[ext_resource path="res://assets/tiles/right_floor.png" type="Texture" id=13]
-[ext_resource path="res://assets/tiles/left_edge.png" type="Texture" id=14]
-[ext_resource path="res://assets/tiles/right_edge.png" type="Texture" id=15]
-[ext_resource path="res://assets/tiles/floor_0.png" type="Texture" id=16]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=17]
-[ext_resource path="res://music_sfx/game_play.wav" type="AudioStream" id=18]
-[ext_resource path="res://assets/scene/trunk_0.png" type="Texture" id=19]
-[ext_resource path="res://assets/scene/trunk_1.png" type="Texture" id=20]
+[ext_resource path="res://assets/tiles/tileset.tres" type="TileSet" id=11]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://music_sfx/game_play.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/scene/trunk_0.png" type="Texture" id=14]
+[ext_resource path="res://assets/scene/trunk_1.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.9763, 32.0017 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -27.127, 32.2244, -31.7736, 27.278, -31.7736, -26.3828, -26.8272, -31.6289, 26.5337, -31.6289, 31.4801, -26.5326, 31.63, 26.5285, 25.9341, 32.0745 )
-
-[sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 256, 256, 0, 256, 0, 32, 256, 32 )
-
-[sub_resource type="OccluderPolygon2D" id=17]
-polygon = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
-
-[sub_resource type="ConvexPolygonShape2D" id=18]
-points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
-
-[sub_resource type="OccluderPolygon2D" id=19]
-polygon = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
-
-[sub_resource type="ConvexPolygonShape2D" id=20]
-points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
-
-[sub_resource type="OccluderPolygon2D" id=21]
-polygon = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
-
-[sub_resource type="ConvexPolygonShape2D" id=22]
-points = PoolVector2Array( 0, 32, 256, 32, 256, 256, 0, 256 )
-
-[sub_resource type="OccluderPolygon2D" id=23]
-polygon = PoolVector2Array( 32, 32, 256, 32, 256, 256, 32, 256 )
-
-[sub_resource type="ConvexPolygonShape2D" id=24]
-points = PoolVector2Array( 32, 32, 256, 32, 256, 256, 32, 256 )
-
-[sub_resource type="OccluderPolygon2D" id=25]
-polygon = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
-
-[sub_resource type="ConvexPolygonShape2D" id=26]
-points = PoolVector2Array( 0, 32, 256, 32, 256, 256, 0, 256 )
-
-[sub_resource type="OccluderPolygon2D" id=27]
-polygon = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
-
-[sub_resource type="ConvexPolygonShape2D" id=28]
-points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
-
-[sub_resource type="TileSet" id=16]
-0/name = "floor_1.png 0"
-0/texture = ExtResource( 11 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 256, 256 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/occluder = SubResource( 3 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-7/name = "left_edge.png 7"
-7/texture = ExtResource( 14 )
-7/tex_offset = Vector2( 0, 0 )
-7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 0, 0, 256, 256 )
-7/tile_mode = 0
-7/occluder_offset = Vector2( 0, 0 )
-7/occluder = SubResource( 23 )
-7/navigation_offset = Vector2( 0, 0 )
-7/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 24 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-7/z_index = 0
-8/name = "right_edge.png 8"
-8/texture = ExtResource( 15 )
-8/tex_offset = Vector2( 0, 0 )
-8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 0, 0, 256, 256 )
-8/tile_mode = 0
-8/occluder_offset = Vector2( 0, 0 )
-8/occluder = SubResource( 25 )
-8/navigation_offset = Vector2( 0, 0 )
-8/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 26 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-8/z_index = 0
-9/name = "floor_0.png 9"
-9/texture = ExtResource( 16 )
-9/tex_offset = Vector2( 0, 0 )
-9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 0, 0, 256, 256 )
-9/tile_mode = 0
-9/occluder_offset = Vector2( 0, 0 )
-9/occluder = SubResource( 27 )
-9/navigation_offset = Vector2( 0, 0 )
-9/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 28 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-9/z_index = 0
-10/name = "left_floor.png 10"
-10/texture = ExtResource( 12 )
-10/tex_offset = Vector2( 0, 0 )
-10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 0, 0, 256, 256 )
-10/tile_mode = 0
-10/occluder_offset = Vector2( 0, 0 )
-10/occluder = SubResource( 17 )
-10/navigation_offset = Vector2( 0, 0 )
-10/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 18 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-10/z_index = 0
-11/name = "right_floor.png 11"
-11/texture = ExtResource( 13 )
-11/tex_offset = Vector2( 0, 0 )
-11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 0, 0, 256, 256 )
-11/tile_mode = 0
-11/occluder_offset = Vector2( 0, 0 )
-11/occluder = SubResource( 19 )
-11/navigation_offset = Vector2( 0, 0 )
-11/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 20 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-11/z_index = 0
-12/name = "left_edge.png 12"
-12/texture = ExtResource( 14 )
-12/tex_offset = Vector2( 0, 0 )
-12/modulate = Color( 1, 1, 1, 1 )
-12/region = Rect2( 0, 0, 256, 256 )
-12/tile_mode = 0
-12/occluder_offset = Vector2( 0, 0 )
-12/occluder = SubResource( 21 )
-12/navigation_offset = Vector2( 0, 0 )
-12/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 22 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-12/z_index = 0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -292,12 +124,12 @@ texture = ExtResource( 10 )
 position = Vector2( 0, -5 )
 scale = Vector2( 0.3, 0.3 )
 z_as_relative = false
-tile_set = SubResource( 16 )
+tile_set = ExtResource( 11 )
 cell_size = Vector2( 256, 256 )
 format = 1
-tile_data = PoolIntArray( 262151, 12, 0, 262152, 0, 0, 262153, 8, 0, 327687, 10, 0, 327688, 9, 0, 327689, 11, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0 )
+tile_data = PoolIntArray( 262150, 4, 0, 262151, 0, 0, 262152, 2, 0, 327686, 3, 0, 327687, 5, 0, 327688, 1, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 17 )]
+[node name="Player" parent="." instance=ExtResource( 12 )]
 position = Vector2( 210.499, 473.706 )
 z_as_relative = false
 
@@ -313,7 +145,7 @@ drag_margin_bottom = 0.1
 editor_draw_drag_margin = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource( 18 )
+stream = ExtResource( 13 )
 volume_db = 5.0
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
@@ -329,11 +161,11 @@ motion_offset = Vector2( 0, 50 )
 [node name="Truck_v1" type="Sprite" parent="ParallaxForeground/ParallaxLayer"]
 position = Vector2( 48.265, 376.382 )
 scale = Vector2( 0.254335, 0.254335 )
-texture = ExtResource( 19 )
+texture = ExtResource( 14 )
 
 [node name="Truck_v2" type="Sprite" parent="ParallaxForeground/ParallaxLayer"]
 position = Vector2( 1005.94, 377.46 )
 scale = Vector2( 0.250784, 0.250784 )
-texture = ExtResource( 20 )
+texture = ExtResource( 15 )
 [connection signal="health_changed" from="Player" to="HUD" method="_on_Player_health_changed"]
 [connection signal="player_killed" from="Player" to="." method="_on_Player_player_killed"]

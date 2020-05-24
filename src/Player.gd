@@ -29,13 +29,14 @@ var velocity = Vector2()
 var current_color : String = "blue"
 var current_life : int
 
-func hit_process(hit : int):
+func life_change(hit : int):
 	current_life += hit
 	if current_life <= 0:
 		print("Dead")
 		emit_signal("player_killed")
-	else:
-		print("current_life " + String(current_life))
+	elif current_life > 6:
+		current_life = 6
+	print("current_life " + String(current_life))
 	emit_signal("health_changed", current_life)
 
 func get_input(delta):
@@ -73,7 +74,7 @@ func get_input(delta):
 	if Input.is_action_just_pressed("turn_light_blue"):
 		set_color("blue")
 	if Input.is_action_just_pressed("cycle_light_color"):
-		hit_process(-1)
+		life_change(-1)
 		match current_color:
 			"red":
 				set_color("yellow")

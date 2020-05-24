@@ -1,14 +1,12 @@
 extends StaticBody2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var target
+var target_vector : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Sprite.visible = false
+	target_vector = Vector2(0.0,0.0)
+	idle()
 
 func in_range(body, enter):
 	if enter:
@@ -17,19 +15,25 @@ func in_range(body, enter):
 		target = null
 
 func see(body):
-	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(position, body.position, [self], collision_mask)
-	if body == result.collider:
-		return true
+	if target != null:
+		var space_state = get_world_2d().direct_space_state
+		var result = space_state.intersect_ray(position, body.position, [self], collision_mask)
+		if body == result.collider:
+			return true
 	return false
 
-func _physics_process(delta):
-	if target != null:
-		if see(target):
-			$Sprite.visible = true
-		else:
-			$Sprite.visible = false
+func chase(vector : Vector2):
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func idle():
+	pass
+
+func _physics_process(delta):
+	if see(target):
+		target_vector = (target.position - position).normalized()
+		chase(target_vector)
+	else:
+		target_vector = Vector2(0.0,0.0)
+		idle()
+	
+
