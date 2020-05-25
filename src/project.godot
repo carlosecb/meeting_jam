@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Meeting Jam"
-run/main_scene="res://TitleScreen.tscn"
+run/main_scene="res://scenes_and_scripts/TitleScreen.tscn"
 config/icon="res://assets/icon.png"
 
 [autoload]

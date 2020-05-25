@@ -1,17 +1,17 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes_and_scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://scenes_and_scripts/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/background/sky.png" type="Texture" id=3]
 [ext_resource path="res://assets/background/mountains.png" type="Texture" id=4]
 [ext_resource path="res://assets/background/mushrooms.png" type="Texture" id=5]
 [ext_resource path="res://assets/background/floor.png" type="Texture" id=6]
-[ext_resource path="res://ColorBlock.gd" type="Script" id=7]
+[ext_resource path="res://scenes_and_scripts/ColorBlock.gd" type="Script" id=7]
 [ext_resource path="res://assets/icon_enemy.png" type="Texture" id=8]
 [ext_resource path="res://assets/enemies/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/scene/tree_0.png" type="Texture" id=10]
 [ext_resource path="res://assets/tiles/tileset.tres" type="TileSet" id=11]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes_and_scripts/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://music_sfx/game_play.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/scene/trunk_0.png" type="Texture" id=14]
 [ext_resource path="res://assets/scene/trunk_1.png" type="Texture" id=15]
@@ -29,7 +29,6 @@ script = ExtResource( 1 )
 layer = 2
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
 position = Vector2( 601.904, 172.874 )
@@ -100,7 +99,7 @@ texture = ExtResource( 8 )
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ColorBlock"]
 occluder = SubResource( 2 )
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 9 )]
+[node name="Enemy" parent="." instance=ExtResource( 9 )]
 
 [node name="tree_0" type="Sprite" parent="."]
 position = Vector2( 605.482, 326.78 )
@@ -136,7 +135,6 @@ stream = ExtResource( 13 )
 volume_db = 5.0
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 layer = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxForeground"]

@@ -1,12 +1,13 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://scenes_and_scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://title_screen/linux_libertine/LinLibertine_DR.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://title_screen/linux_libertine/LinLibertine_aBS.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/player/blue/idle/blue_000.png" type="Texture" id=4]
 [ext_resource path="res://assets/player/blue/idle/blue_001.png" type="Texture" id=5]
 [ext_resource path="res://assets/player/blue/idle/blue_002.png" type="Texture" id=6]
 [ext_resource path="res://assets/player/blue/idle/blue_003.png" type="Texture" id=7]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
