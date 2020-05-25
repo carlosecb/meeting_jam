@@ -10,8 +10,7 @@ signal player_killed
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Read.")
-	current_life = 6
-	pass # Replace with function body.
+	life_points = 6
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -27,17 +26,17 @@ export (int) var glide = 30
 var velocity = Vector2()
 
 var current_color : String = "blue"
-var current_life : int
+var life_points : int
 
 func life_change(hit : int):
-	current_life += hit
-	if current_life <= 0:
+	life_points += hit
+	if life_points <= 0:
 		print("Dead")
 		emit_signal("player_killed")
-	elif current_life > 6:
-		current_life = 6
-	print("current_life " + String(current_life))
-	emit_signal("health_changed", current_life)
+	elif life_points > 6:
+		life_points = 6
+	print("life_points " + String(life_points))
+	emit_signal("health_changed", life_points)
 
 func get_input(delta):
 	if is_on_floor():
